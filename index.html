@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <title>Косметолог</title>
+
+  <style>
+    html { scroll-behavior: smooth; }
+
+    .nav-link.active {
+      color: #d4a373;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+<!-- MOBILE TOP BAR -->
+<div class="md:hidden fixed top-0 left-0 right-0 bg-white shadow z-50 flex justify-between items-center p-4">
+  <div class="font-semibold">Косметолог</div>
+  <button id="menuBtn" class="text-2xl">☰</button>
+</div>
+
+<!-- OVERLAY -->
+<div id="overlay" class="hidden fixed inset-0 bg-black/40 z-40 md:hidden"></div>
+
+<!-- SIDEBAR -->
+<aside id="sidebar"
+  class="fixed top-0 left-0 h-full w-64 bg-white shadow p-6
+         transform -translate-x-full md:translate-x-0
+         transition-transform duration-300 z-50">
+
+  <nav class="flex flex-col gap-4 mt-10 md:mt-0">
+
+    <a class="nav-link" href="#home">Главная</a>
+    <a class="nav-link" href="#about">Обо мне</a>
+    <a class="nav-link" href="#services">Услуги</a>
+    <a class="nav-link" href="#price">Прайс</a>
+    <a class="nav-link" href="#contact">Контакты</a>
+
+  </nav>
+  <div class="pt-6 border-t mt-6 flex gap-3">
+    <a href="/index.html" class="font-semibold text-[#d4a373]">RU</a>
+    <a href="/pl/index.html">PL</a>
+  </div>
+</aside>
+
+<!-- CONTENT -->
+<main class="md:ml-64 p-6 md:p-10 space-y-32 pt-20 md:pt-10">
+
+<!-- HOME -->
+<section id="home" class="min-h-screen flex flex-col md:flex-row items-center gap-10">
+
+  <div class="flex-1">
+    <h1 class="text-4xl md:text-5xl font-bold mb-6">
+      Косметолог эстетической медицины
+    </h1>
+
+    <p class="text-base md:text-lg leading-relaxed mb-6">
+      Я помогаю клиентам улучшить состояние кожи, вернуть ей здоровый
+      и ухоженный вид. Индивидуальный подход и безопасные методики.
+    </p>
+
+    <button class="bg-[#d4a373] text-white px-6 py-3 rounded-full">
+      Записаться
+    </button>
+  </div>
+
+  <div class="flex-1 flex justify-center">
+    <div class="w-64 md:w-80 h-80 md:h-96 bg-gray-300
+                rounded-[60%_40%_30%_70%/60%_30%_70%_40%]
+                flex items-center justify-center text-gray-600">
+      Фото врача
+    </div>
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="min-h-screen flex flex-col md:flex-row items-center gap-10">
+
+  <div class="flex-1 flex justify-center">
+    <div class="w-64 md:w-72 h-72 md:h-80 bg-gray-300
+                rounded-[30%_70%_70%_30%/30%_30%_70%_70%]
+                flex items-center justify-center text-gray-600">
+      Фото / кабинет
+    </div>
+  </div>
+
+  <div class="flex-1">
+    <h2 class="text-3xl md:text-4xl font-semibold mb-6">Обо мне</h2>
+
+    <p class="mb-4 leading-relaxed">
+      Я сертифицированный косметолог с опытом работы в эстетической сфере.
+      Индивидуальный подбор процедур под кожу клиента.
+    </p>
+
+    <p class="leading-relaxed">
+      Моя цель — здоровая и естественно красивая кожа.
+    </p>
+  </div>
+
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="min-h-screen">
+
+  <h2 class="text-3xl md:text-4xl font-semibold mb-10">Услуги</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+    <div class="bg-white p-6 rounded-2xl shadow">
+      <h3 class="font-semibold mb-2">Чистка лица</h3>
+      <p>Очищение кожи и уменьшение воспалений.</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-2xl shadow">
+      <h3 class="font-semibold mb-2">Пилинги</h3>
+      <p>Обновление и выравнивание тона кожи.</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-2xl shadow">
+      <h3 class="font-semibold mb-2">Увлажнение</h3>
+      <p>Глубокое восстановление кожи.</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-2xl shadow">
+      <h3 class="font-semibold mb-2">Консультация</h3>
+      <p>Подбор ухода под тип кожи.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PRICE -->
+<section id="price" class="min-h-screen">
+
+  <h2 class="text-3xl md:text-4xl font-semibold mb-10">Прайс</h2>
+
+  <div class="space-y-4 max-w-xl">
+
+    <div class="flex justify-between bg-white p-4 rounded-xl shadow">
+      <span>Консультация</span>
+      <span>100 zł</span>
+    </div>
+
+    <div class="flex justify-between bg-white p-4 rounded-xl shadow">
+      <span>Чистка лица</span>
+      <span>180 zł</span>
+    </div>
+
+    <div class="flex justify-between bg-white p-4 rounded-xl shadow">
+      <span>Пилинг</span>
+      <span>220 zł</span>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="min-h-screen">
+
+  <h2 class="text-3xl md:text-4xl font-semibold mb-6">Контакты</h2>
+
+  <p>📍 Гданьск</p>
+  <p>📞 +48 000 000 000</p>
+  <p>✉️ email@example.com</p>
+
+  <button class="mt-6 bg-[#d4a373] text-white px-6 py-3 rounded-full">
+    Записаться
+  </button>
+
+</section>
+
+</main>
+
+<script src="js/main.js" defer></script>
+
+</body>
+</html>
