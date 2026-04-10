@@ -1,3 +1,4 @@
+
 // ==========================
 // MOBILE MENU
 // ==========================
@@ -23,20 +24,32 @@ menuBtn?.addEventListener("click", () => {
   else openMenu();
 });
 
-// close on overlay
+// close overlay
 overlay?.addEventListener("click", closeMenu);
 
-// close on link click
+// close on nav click (mobile UX)
 document.querySelectorAll(".nav-link").forEach(link => {
   link.addEventListener("click", closeMenu);
 });
 
 
 // ==========================
-// SMOOTH SCROLL (FIXED)
+// ACTIVE STATE FUNCTION
 // ==========================
 const navLinks = document.querySelectorAll(".nav-link");
+const sections = document.querySelectorAll("section");
 
+function setActive(id) {
+  navLinks.forEach(link => link.classList.remove("active"));
+
+  const active = document.querySelector(`.nav-link[href="#${id}"]`);
+  if (active) active.classList.add("active");
+}
+
+
+// ==========================
+// SMOOTH SCROLL + HASH
+// ==========================
 navLinks.forEach(link => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
@@ -46,53 +59,62 @@ navLinks.forEach(link => {
 
     if (!target) return;
 
-    const isMobile = window.innerWidth < 768;
+    // 🔥 мгновенный active
+    setActive(id);
 
-    const offset = isMobile ? 90 : 60;
-
-    const top =
-      target.getBoundingClientRect().top +
-      window.pageYOffset -
-      offset;
-
-    window.scrollTo({
-      top,
-      behavior: "smooth"
+    target.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
     });
+
+    history.pushState(null, null, `#${id}`);
   });
 });
 
 
 // ==========================
-// ACTIVE SECTION HIGHLIGHT
+// ACTIVE SECTION (OPTIMIZED)
 // ==========================
-const sections = document.querySelectorAll("section");
+let lastActive = null;
 
 window.addEventListener("scroll", () => {
-  let scrollPos = window.scrollY + 120;
+  const scrollPos = window.scrollY + 120;
 
-  sections.forEach(section => {
+  for (const section of sections) {
     if (
       scrollPos >= section.offsetTop &&
       scrollPos < section.offsetTop + section.offsetHeight
     ) {
-      navLinks.forEach(link => link.classList.remove("active"));
-
-      const active = document.querySelector(
-        `.nav-link[href="#${section.id}"]`
-      );
-
-      if (active) active.classList.add("active");
+      if (lastActive !== section.id) {
+        lastActive = section.id;
+        setActive(section.id);
+      }
+      break;
     }
-  });
+  }
 });
 
 
 // ==========================
-// FIX: no auto jump on load
+// INITIAL LOAD FIX
 // ==========================
 window.addEventListener("load", () => {
-  if (window.location.hash) {
-    window.scrollTo(0, 0);
+  const hash = window.location.hash.replace("#", "");
+
+  if (hash) {
+    setActive(hash);
+
+    const target = document.getElementById(hash);
+    if (target) {
+      setTimeout(() => {
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }, 100);
+    }
+  } else {
+    // 🔥 первая ссылка активна сразу
+    setActive("home");
   }
 });

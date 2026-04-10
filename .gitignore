@@ -1,0 +1,22 @@
+# dependencies
+node_modules/
+
+# build output (если есть сборка tailwind)
+dist/
+build/
+css/style.css.map
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# env files (если будут)
+.env
