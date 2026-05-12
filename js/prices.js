@@ -75,8 +75,8 @@ const priceData = [
   {
     ru: "Ботулинотерапия (Botox, Vistabel, Dysport, Azzalure)",
     pl: "Toksyna botulinowa (Botox, Vistabel, Dysport, Azzalure)",
-    noteRu: "*для мужчин +150 zł (необходимость в увеличенной дозировке из-за большей мышечной активности)",
-    notePl: "*dla mężczyzn +150 zł (konieczność zwiększonej dawki ze względu na większą aktywność mięśniową)",
+    noteRu: "для мужчин +150 zł (необходимость в увеличенной дозировке из-за большей мышечной активности)",
+    notePl: "dla mężczyzn +150 zł (konieczność zwiększonej dawki ze względu na większą aktywność mięśniową)",
     items: [
       { ru: "Межбровье (+морщины носа при необходимости)", pl: "Okolica międzybrwiowa (+zmarszczki nosa w razie potrzeby)", price: "450 zł" },
       { ru: "Лоб + межбровье", pl: "Czoło + okolica międzybrwiowa", price: "850 zł" },
@@ -191,9 +191,10 @@ function renderPriceList() {
   const container = document.getElementById("price-list");
   if (!container) return;
 
-  container.innerHTML = priceData.map(cat => {
+  container.innerHTML = priceData.map((cat, index) => {
     const name = lang === "pl" ? cat.pl : cat.ru;
     const note = lang === "pl" ? cat.notePl : cat.noteRu;
+    const isFirst = index === 0;
 
     const noteHtml = note
       ? `<p class="text-sm text-gray-400 mt-1 ml-3">${note}</p>`
@@ -214,17 +215,39 @@ function renderPriceList() {
         </div>`;
     }).join("");
 
+    if (isFirst) {
+      return `
+        <div class="bg-white rounded-xl shadow-sm">
+          <div class="px-6 pt-5 pb-4 border-b border-gray-100">
+            <div class="flex items-center gap-2">
+              <div class="w-1 h-5 rounded-full bg-[#c6e92a]"></div>
+              <h3 class="font-semibold text-gray-800">${name}</h3>
+            </div>
+            ${noteHtml}
+          </div>
+          <div class="divide-y divide-gray-100">
+            ${itemsHtml}
+          </div>
+        </div>`;
+    }
+
     return `
       <div class="bg-white rounded-xl shadow-sm">
-        <div class="px-6 pt-5 pb-4 border-b border-gray-100">
-          <div class="flex items-center gap-2">
-            <div class="w-1 h-5 rounded-full bg-[#c6e92a]"></div>
-            <h3 class="font-semibold text-gray-800">${name}</h3>
+        <div class="px-6 pt-5 pb-4 cursor-pointer select-none"
+             onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180')">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <div class="w-1 h-5 rounded-full bg-[#c6e92a]"></div>
+              <h3 class="font-semibold text-gray-800">${name}</h3>
+            </div>
+            <i class="fa-solid fa-chevron-down text-gray-400 text-xs chevron transition-transform duration-200"></i>
           </div>
           ${noteHtml}
         </div>
-        <div class="divide-y divide-gray-100">
-          ${itemsHtml}
+        <div class="hidden">
+          <div class="border-t border-gray-100 divide-y divide-gray-100">
+            ${itemsHtml}
+          </div>
         </div>
       </div>`;
   }).join("");
