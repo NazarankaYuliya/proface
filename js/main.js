@@ -78,6 +78,16 @@ navLinks.forEach(link => {
 let lastActive = null;
 
 window.addEventListener("scroll", () => {
+  // если долистали до конца — активируем последнюю секцию
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 10) {
+    const last = sections[sections.length - 1];
+    if (lastActive !== last.id) {
+      lastActive = last.id;
+      setActive(last.id);
+    }
+    return;
+  }
+
   const scrollPos = window.scrollY + 120;
 
   for (const section of sections) {

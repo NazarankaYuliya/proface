@@ -3,175 +3,175 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/png" href="../img/free-icon-face.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
-
-  <title>Косметолог</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>PROFACE</title>
 </head>
 
 <body class="bg-gray-50 text-gray-800">
 
 <!-- MOBILE TOP BAR -->
 <div class="md:hidden fixed top-0 left-0 right-0 bg-white shadow z-50 flex justify-between items-center p-4">
-  <div class="font-semibold">Косметолог</div>
+  <div class="font-playfair font-semibold tracking-widest">PROFACE</div>
   <button id="menuBtn" class="text-2xl">☰</button>
 </div>
 
 <!-- OVERLAY -->
 <div id="overlay" class="hidden fixed inset-0 bg-black/40 z-40 md:hidden"></div>
 
+<!-- LAYOUT WRAPPER -->
+<div class="max-w-screen-xl mx-auto flex">
+
 <!-- SIDEBAR -->
 <aside id="sidebar"
-  class="fixed top-0 left-0 h-full w-64 bg-white shadow p-6
+  class="fixed top-0 left-0 h-full w-64 bg-white shadow p-6 flex-shrink-0
          transform -translate-x-full md:translate-x-0
-         transition-transform duration-300 z-50">
+         transition-transform duration-300 z-50
+         md:sticky md:top-0 md:h-screen md:self-start
+         md:bg-gray-50 md:shadow-none md:pr-10
+         md:flex md:flex-col md:justify-center">
 
-  <nav class="flex flex-col gap-4 mt-10 md:mt-0">
-
-    <a class="nav-link" href="#home">Главная</a>
-    <a class="nav-link" href="#about">Обо мне</a>
-    <a class="nav-link" href="#services">Услуги</a>
-    <a class="nav-link" href="#price">Прайс</a>
-    <a class="nav-link" href="#contact">Контакты</a>
-
+  <nav class="font-dm flex flex-col gap-4 mt-10 md:mt-0">
+    <a class="nav-link" href="#home">Strona główna</a>
+    <a class="nav-link" href="#about">O mnie</a>
+    <a class="nav-link" href="#price">Cennik</a>
+    <a class="nav-link" href="#contact">Kontakt</a>
   </nav>
-  <div class="pt-6 border-t mt-6 flex gap-3">
-    <a href="../" >RU</a>
-    <a href="./" class="font-semibold text-[#d4a373]">PL</a>
+  <div class="pt-6 border-t mt-6 flex gap-2 items-center">
+    <a href="../" class="text-gray-400 text-sm px-3 py-1 rounded-full hover:text-gray-700">RU</a>
+    <a href="./" class="bg-[#c6e92a] text-gray-900 font-semibold text-sm px-3 py-1 rounded-full">PL</a>
+  </div>
+  <div class="hidden md:flex gap-4 justify-center absolute bottom-6 left-0 right-0 text-lg">
+    <a href="https://www.instagram.com/polina.proface?igsh=dzFrZmN1OWhyYXd2" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-[#1589d9] transition-colors"><i class="fab fa-instagram"></i></a>
+    <a href="#" class="text-gray-300 hover:text-[#1589d9] transition-colors"><i class="fab fa-telegram"></i></a>
+    <a href="#" class="text-gray-300 hover:text-[#1589d9] transition-colors"><i class="fab fa-whatsapp"></i></a>
+    <a href="#" class="text-gray-300 hover:text-[#1589d9] transition-colors"><i class="fab fa-facebook"></i></a>
   </div>
 </aside>
 
 <!-- CONTENT -->
-<main class="md:ml-64 p-6 md:p-10 space-y-32 pt-20 md:pt-10">
+<main class="flex-1 min-w-0 p-6 md:p-10 space-y-16 md:space-y-32 pt-20 md:pt-10">
 
-<!-- HOME -->
-<section id="home" class="min-h-screen flex flex-col md:flex-row items-center gap-10">
+  <!-- HOME -->
+  <section id="home" class="min-h-screen flex flex-col lg:flex-row items-center gap-10">
 
-  <div class="flex-1">
-    <h1 class="text-4xl md:text-5xl font-bold mb-6">
-      Косметолог эстетической медицины
-    </h1>
-
-    <p class="text-base md:text-lg leading-relaxed mb-6">
-      Я помогаю клиентам улучшить состояние кожи, вернуть ей здоровый
-      и ухоженный вид. Индивидуальный подход и безопасные методики.
-    </p>
-
-    <button class="bg-[#d4a373] text-white px-6 py-3 rounded-full">
-      Записаться
-    </button>
-  </div>
-
-  <div class="flex-1 flex justify-center">
-    <div class="w-64 md:w-80 h-80 md:h-96 bg-gray-300
-                rounded-[60%_40%_30%_70%/60%_30%_70%_40%]
-                flex items-center justify-center text-gray-600">
-      Фото врача
+    <div class="flex-1 order-2 lg:order-1">
+      <h1 class="text-4xl md:text-5xl font-bold mb-3">
+        Palina Dzenisionak
+      </h1>
+      <p class="text-[#1589d9] font-medium mb-6">Lekarz dermatolog · Lekarz medycyny estetycznej</p>
+      <p class="text-base md:text-lg leading-relaxed mb-6">
+        Medyczne podejście do zdrowia i piękna skóry. Leczę, koryguję
+        i pomagam wyglądać lepiej — bezpiecznie i z długotrwałymi efektami.
+      </p>
+      <a href="#contact"
+         class="inline-flex items-center gap-2 border-2 border-[#1589d9] text-[#1589d9] font-semibold px-6 py-3 rounded-full transition-all duration-200 hover:bg-[#1589d9] hover:text-white">
+        Umów wizytę <span>→</span>
+      </a>
     </div>
-  </div>
 
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="min-h-screen flex flex-col md:flex-row items-center gap-10">
-
-  <div class="flex-1 flex justify-center">
-    <div class="w-64 md:w-72 h-72 md:h-80 bg-gray-300
-                rounded-[30%_70%_70%_30%/30%_30%_70%_70%]
-                flex items-center justify-center text-gray-600">
-      Фото / кабинет
+    <div class="flex-1 flex justify-center items-center order-1 lg:order-2 p-6">
+      <img src="../img/about.jpg" alt="Zdjęcie lekarza"
+           class="w-full lg:w-80 h-full object-cover
+                  rounded-[60%_40%_30%_70%/60%_30%_70%_40%]
+                  outline outline-[3px] outline-[#c6e92a] outline-offset-[8px]">
     </div>
-  </div>
 
-  <div class="flex-1">
-    <h2 class="text-3xl md:text-4xl font-semibold mb-6">Обо мне</h2>
+  </section>
 
+  <!-- ABOUT -->
+  <section id="about">
+
+    <h2 class="text-3xl md:text-4xl font-semibold mb-6">O mnie</h2>
     <p class="mb-4 leading-relaxed">
-      Я сертифицированный косметолог с опытом работы в эстетической сфере.
-      Индивидуальный подбор процедур под кожу клиента.
+      Jestem certyfikowanym kosmetologiem z doświadczeniem w dziedzinie
+      medycyny estetycznej. Indywidualny dobór zabiegów do skóry klienta.
     </p>
-
     <p class="leading-relaxed">
-      Моя цель — здоровая и естественно красивая кожа.
+      Moim celem jest zdrowa i naturalnie piękna skóra.
     </p>
-  </div>
 
-</section>
+  </section>
 
-<!-- SERVICES -->
-<section id="services" class="min-h-screen">
+  <!-- PRICE -->
+  <section id="price">
 
-  <h2 class="text-3xl md:text-4xl font-semibold mb-10">Услуги</h2>
+    <h2 class="text-3xl md:text-4xl font-semibold mb-10">Cennik</h2>
+    <div id="price-list" class="space-y-6"></div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <a href="#contact"
+       class="inline-flex items-center gap-2 mt-8 border-2 border-[#1589d9] text-[#1589d9] font-semibold px-6 py-3 rounded-full transition-all duration-200 hover:bg-[#1589d9] hover:text-white">
+      Umów wizytę <span>→</span>
+    </a>
 
-    <div class="bg-white p-6 rounded-2xl shadow">
-      <h3 class="font-semibold mb-2">Чистка лица</h3>
-      <p>Очищение кожи и уменьшение воспалений.</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+
+    <h2 class="text-3xl md:text-4xl font-semibold mb-8">Kontakt</h2>
+
+    <div class="divide-y divide-gray-200 mb-8">
+
+      <div class="flex items-center gap-4 py-5">
+        <i class="fa-solid fa-location-dot text-[#1589d9] w-4 text-sm flex-shrink-0"></i>
+        <div>
+          <p class="text-xs text-gray-400 mb-0.5">Adres</p>
+          <p class="text-sm font-medium text-gray-800">ul. Marszałkowska 84/92, 00-514 Warszawa</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4 py-5">
+        <i class="fa-solid fa-phone text-[#1589d9] w-4 text-sm flex-shrink-0"></i>
+        <div>
+          <p class="text-xs text-gray-400 mb-0.5">Telefon</p>
+          <a href="tel:+48000000000" class="text-sm font-medium text-gray-800 hover:text-[#1589d9] transition-colors">+48 000 000 000</a>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4 py-5">
+        <i class="fa-solid fa-envelope text-[#1589d9] w-4 text-sm flex-shrink-0"></i>
+        <div>
+          <p class="text-xs text-gray-400 mb-0.5">E-mail</p>
+          <a href="mailto:email@example.com" class="text-sm font-medium text-gray-800 hover:text-[#1589d9] transition-colors">email@example.com</a>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4 py-5">
+        <i class="fa-solid fa-share-nodes text-[#1589d9] w-4 text-sm flex-shrink-0"></i>
+        <div>
+          <p class="text-xs text-gray-400 mb-2">Social media</p>
+          <div class="flex gap-3">
+            <a href="https://www.instagram.com/polina.proface?igsh=dzFrZmN1OWhyYXd2" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#1589d9] transition-colors text-lg">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-[#1589d9] transition-colors text-lg">
+              <i class="fab fa-telegram"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-[#1589d9] transition-colors text-lg">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-[#1589d9] transition-colors text-lg">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <div class="bg-white p-6 rounded-2xl shadow">
-      <h3 class="font-semibold mb-2">Пилинги</h3>
-      <p>Обновление и выравнивание тона кожи.</p>
-    </div>
-
-    <div class="bg-white p-6 rounded-2xl shadow">
-      <h3 class="font-semibold mb-2">Увлажнение</h3>
-      <p>Глубокое восстановление кожи.</p>
-    </div>
-
-    <div class="bg-white p-6 rounded-2xl shadow">
-      <h3 class="font-semibold mb-2">Консультация</h3>
-      <p>Подбор ухода под тип кожи.</p>
-    </div>
-
-  </div>
-
-</section>
-
-<!-- PRICE -->
-<section id="price" class="min-h-screen">
-
-  <h2 class="text-3xl md:text-4xl font-semibold mb-10">Прайс</h2>
-
-  <div class="space-y-4 max-w-xl">
-
-    <div class="flex justify-between bg-white p-4 rounded-xl shadow">
-      <span>Консультация</span>
-      <span>100 zł</span>
-    </div>
-
-    <div class="flex justify-between bg-white p-4 rounded-xl shadow">
-      <span>Чистка лица</span>
-      <span>180 zł</span>
-    </div>
-
-    <div class="flex justify-between bg-white p-4 rounded-xl shadow">
-      <span>Пилинг</span>
-      <span>220 zł</span>
-    </div>
-
-  </div>
-
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="min-h-screen">
-
-  <h2 class="text-3xl md:text-4xl font-semibold mb-6">Контакты</h2>
-
-  <p>📍 Варшава</p>
-  <p>📞 +48 000 000 000</p>
-  <p>✉️ email@example.com</p>
-
-  <button class="mt-6 bg-[#d4a373] text-white px-6 py-3 rounded-full">
-    Записаться
-  </button>
-
-</section>
+  </section>
 
 </main>
 
+</div><!-- end layout wrapper -->
+
 <script src="../js/main.js" defer></script>
+<script src="../js/prices.js" defer></script>
 
 </body>
 </html>

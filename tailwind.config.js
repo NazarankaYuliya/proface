@@ -6,7 +6,12 @@ export default {
       "./js/**/*.js"
     ],
     theme: {
-      extend: {},
+      extend: {
+        fontFamily: {
+          playfair: ['"Playfair Display"', 'serif'],
+          dm: ['"DM Sans"', 'sans-serif'],
+        }
+      },
     },
     plugins: [],
   }
