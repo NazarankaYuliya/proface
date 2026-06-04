@@ -167,7 +167,15 @@ const priceData = [
       { ru: "Лицо + шея + декольте", pl: "Twarz + szyja + dekolt", price: "1000 zł" },
       { ru: "Щёки / лоб / нос", pl: "Policzki / czoło / nos", price: "300 zł" },
       { ru: "Спина", pl: "Plecy", price: "1000 zł" },
-      { ru: "Рубцы послеоперационные / посттравматические (до 15 см)", pl: "Blizny pooperacyjne / pourazowe (do 15 cm)", price: "300 zł" }
+      { ru: "Рубцы послеоперационные / посттравматические (до 15 см)", pl: "Blizny pooperacyjne / pourazowe (do 15 cm)", price: "300 zł" },
+      { ru: "Единичные сосудистые звёздочки", pl: "Pojedyncze naczynka", price: "120 zł" }
+    ]
+  },
+  {
+    ru: "Коллагеностимуляция",
+    pl: "Stymulacja kolagenu",
+    items: [
+      { ru: "Полимолочная кислота", pl: "Kwas polimlekowy", price: "1700 zł" }
     ]
   },
   {
