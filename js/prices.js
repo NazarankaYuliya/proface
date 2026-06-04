@@ -172,13 +172,6 @@ const priceData = [
     ]
   },
   {
-    ru: "Коллагеностимуляция",
-    pl: "Stymulacja kolagenu",
-    items: [
-      { ru: "Полимолочная кислота", pl: "Kwas polimlekowy", price: "1700 zł" }
-    ]
-  },
-  {
     ru: "Микроигольчатый RF-lifting",
     pl: "Mikroigłkowy RF-lifting",
     noteRu: "одноразовая индивидуальная насадка входит в стоимость",
@@ -190,6 +183,13 @@ const priceData = [
       { ru: "Лицо + шея + декольте", pl: "Twarz + szyja + dekolt", price: "1400 zł" },
       { ru: "Щёки (рубцы постакне)", pl: "Policzki (blizny potrądzikowe)", price: "800 zł" },
       { ru: "Живот", pl: "Brzuch", price: "1400 zł" }
+    ]
+  },
+  {
+    ru: "Коллагеностимуляция",
+    pl: "Stymulacja kolagenu",
+    items: [
+      { ru: "Полимолочная кислота", pl: "Kwas polimlekowy", price: "1700 zł" }
     ]
   }
 ];
