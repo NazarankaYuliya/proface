@@ -47,7 +47,8 @@ const priceData = [
     items: [
       { ru: "Mastelli Plinest (2 ml)", pl: "Mastelli Plinest (2 ml)", price: "750 zł" },
       { ru: "Mastelli Newest (2 ml)", pl: "Mastelli Newest (2 ml)", price: "750 zł" },
-      { ru: "Plenhyage XL Strong (2 ml)", pl: "Plenhyage XL Strong (2 ml)", price: "750 zł" }
+      { ru: "Plenhyage XL Strong (2 ml)", pl: "Plenhyage XL Strong (2 ml)", price: "750 zł" },
+       { ru: "Mastelli Plinest One (4 ml)", pl: "Mastelli Plinest One (4 ml)", price: "600 zł" },
     ]
   },
   {
